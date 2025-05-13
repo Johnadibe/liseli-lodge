@@ -51,7 +51,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <span className="text-2xl font-bold text-primary">Liseli Lodge</span>
+            <span className="text-2xl font-bold text-white">Liseli Lodge</span>
           </motion.div>
         </Link>
 
@@ -68,7 +68,7 @@ export default function Navbar() {
                 href={item.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
-                  pathname === item.href ? "text-primary" : "text-muted-foreground",
+                  pathname === item.href ? "text-whiite" : "text-muted-foreground",
                 )}
               >
                 {item.name}
@@ -101,8 +101,8 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-base font-medium transition-colors hover:text-primary",
-                    pathname === item.href ? "text-primary" : "text-muted-foreground",
+                    "text-base font-medium transition-colors hover:text-white",
+                    pathname === item.href ? "text-white" : "text-gray-400",
                   )}
                   onClick={handleLinkClick}
                 >

@@ -36,14 +36,14 @@ export function CTASection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-col sm:flex-row justify-center gap-4"
         >
-          <Button asChild size="lg" variant="secondary" className="text-primary">
+          <Button asChild size="lg" variant="secondary" className="text-white">
             <Link href="/contact">Book Your Stay</Link>
           </Button>
           <Button
             asChild
             size="lg"
             variant="outline"
-            className="border-white text-white"
+            className="text-white"
           >
             <Link href="/contact">Contact Us</Link>
           </Button>

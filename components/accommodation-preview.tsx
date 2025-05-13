@@ -14,21 +14,21 @@ const rooms = [
     description: "Comfortable room with modern amenities for a relaxing stay.",
     image:
       "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    price: "$80",
+    price: "K950",
   },
   {
     title: "Deluxe Suite",
     description: "Spacious suite with separate living area and premium amenities.",
     image:
       "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
-    price: "$120",
+    price: "K1,450",
   },
   {
     title: "Executive Room",
     description: "Elegant room with workspace and enhanced comfort features.",
     image:
       "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    price: "$100",
+    price: "K1,200",
   },
 ]
 
@@ -38,7 +38,7 @@ export function AccommodationPreview() {
 
   return (
     <section className="py-20">
-      <div className="container">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

@@ -23,6 +23,7 @@ const facilities = [
       "Climate Control",
       "Catering Options",
     ],
+    price: "K5,000 per day",
   },
   {
     title: "Executive Boardroom",
@@ -39,6 +40,7 @@ const facilities = [
       "Refreshment Service",
       "Natural Lighting",
     ],
+    price: "K2,500 per day",
   },
   {
     title: "Training Room",
@@ -55,6 +57,7 @@ const facilities = [
       "Break-out Areas",
       "Catering Options",
     ],
+    price: "K3,200 per day",
   },
 ]
 
@@ -73,7 +76,7 @@ export function ConferencesFacilities() {
 
   return (
     <section className="py-20">
-      <div className="container">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="space-y-16">
           {facilities.map((facility, index) => (
             <motion.div
@@ -92,8 +95,12 @@ export function ConferencesFacilities() {
                 <h2 className="text-2xl md:text-3xl font-bold mb-2">{facility.title}</h2>
                 <p className="text-muted-foreground mb-4">{facility.description}</p>
 
-                <div className="mb-4">
+                <div className="mb-2">
                   <span className="font-semibold">Capacity:</span> {facility.capacity}
+                </div>
+
+                <div className="mb-2">
+                  <span className="font-semibold">Price:</span> {facility.price}
                 </div>
 
                 <div className="mb-6">
@@ -101,7 +108,7 @@ export function ConferencesFacilities() {
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {facility.features.map((feature, i) => (
                       <li key={i} className="flex items-center text-muted-foreground">
-                        {featureIcons[feature] || featureIcons.default}
+                        {featureIcons[feature as keyof typeof featureIcons] || featureIcons.default}
                         {feature}
                       </li>
                     ))}

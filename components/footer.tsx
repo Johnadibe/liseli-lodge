@@ -3,8 +3,8 @@ import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-100 pt-16 pb-8">
-      <div className="container">
+    <footer className="bg-gray-900 text-gray-100 pt-24 pb-8 mt-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <h3 className="text-xl font-bold mb-4">Liseli Lodge</h3>
@@ -93,7 +93,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="w-full bg-primary text-white py-2 px-4 rounded hover:bg-primary/90 transition-colors"
+                className="w-full border border-gray-900 bg-primary text-gray-900 py-2 px-4 rounded hover:bg-primary/90 transition-colors"
               >
                 Subscribe
               </button>

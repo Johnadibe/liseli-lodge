@@ -5,7 +5,7 @@ import { CTASection } from "@/components/cta-section"
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full overflow-x-hidden">
       <AboutHero />
       <AboutContent />
       <TeamSection />

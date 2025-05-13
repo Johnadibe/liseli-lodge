@@ -59,7 +59,7 @@ export function NewsList() {
   const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    <section className="py-20">
+    <section className="py-20 mx-auto px-4 sm:px-6 lg:px-8">
       <div className="container">
         <div ref={ref} className="space-y-12">
           {newsItems.map((item, index) => (

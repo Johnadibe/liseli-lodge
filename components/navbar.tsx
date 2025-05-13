@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { cn } from "@/frontend/lib/utils"
+import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
@@ -20,6 +20,7 @@ const navItems = [
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -35,6 +36,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Close the mobile menu when a link is clicked
+  const handleLinkClick = () => {
+    setIsOpen(false)
+  }
+
   return (
     <header
       className={cn(
@@ -42,7 +48,7 @@ export default function Navbar() {
         isScrolled ? "bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-sm" : "bg-transparent",
       )}
     >
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <span className="text-2xl font-bold text-primary">Liseli Lodge</span>
@@ -81,7 +87,7 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Navigation */}
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-6 w-6" />
@@ -98,11 +104,12 @@ export default function Navbar() {
                     "text-base font-medium transition-colors hover:text-primary",
                     pathname === item.href ? "text-primary" : "text-muted-foreground",
                   )}
+                  onClick={handleLinkClick}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button asChild className="mt-4">
+              <Button asChild className="mt-4" onClick={handleLinkClick}>
                 <Link href="/contact">Book Now</Link>
               </Button>
             </nav>

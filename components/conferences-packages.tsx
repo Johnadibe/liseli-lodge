@@ -9,7 +9,7 @@ import { Check } from "lucide-react"
 const packages = [
   {
     title: "Half-Day Package",
-    price: "$25",
+    price: "K450",
     description: "Perfect for short meetings and presentations.",
     features: [
       "Conference room for up to 4 hours",
@@ -22,7 +22,7 @@ const packages = [
   },
   {
     title: "Full-Day Package",
-    price: "$45",
+    price: "K850",
     description: "Ideal for day-long conferences and workshops.",
     features: [
       "Conference room for up to 8 hours",
@@ -37,7 +37,7 @@ const packages = [
   },
   {
     title: "Executive Package",
-    price: "$65",
+    price: "K1,250",
     description: "Premium offering for high-level meetings and events.",
     features: [
       "Executive boardroom for up to 8 hours",
@@ -59,7 +59,7 @@ export function ConferencesPackages() {
 
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -86,9 +86,8 @@ export function ConferencesPackages() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className={`relative bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden ${
-                pkg.popular ? "ring-2 ring-primary" : ""
-              }`}
+              className={`relative bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden ${pkg.popular ? "ring-2 ring-primary" : ""
+                }`}
             >
               {pkg.popular && (
                 <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1 text-sm font-medium">

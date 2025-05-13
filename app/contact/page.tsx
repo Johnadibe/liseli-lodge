@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col w-full">
       <ContactHero />
-      <div className="container grid md:grid-cols-2 gap-8 py-12">
+      <div className="container grid md:grid-cols-2 gap-8 py-12 mx-auto px-4 sm:px-6 lg:px-8">
         <ContactForm />
         <ContactInfo />
       </div>

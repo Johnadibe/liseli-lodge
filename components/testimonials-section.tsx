@@ -41,7 +41,7 @@ export function TestimonialsSection() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900 mx-auto px-4 sm:px-6 lg:px-8">
       <div className="container">
         <div className="text-center mb-16">
           <motion.h2
@@ -89,9 +89,8 @@ export function TestimonialsSection() {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className={`h-5 w-5 ${
-                      i < testimonial.rating ? "text-yellow-500 fill-yellow-500" : "text-gray-300"
-                    }`}
+                    className={`h-5 w-5 ${i < testimonial.rating ? "text-yellow-500 fill-yellow-500" : "text-gray-300"
+                      }`}
                   />
                 ))}
               </div>

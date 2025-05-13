@@ -10,7 +10,7 @@ export function AboutContent() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section className="py-20">
+    <section className="py-20 mx-auto px-4 sm:px-6 lg:px-8">
       <div className="container">
         <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div

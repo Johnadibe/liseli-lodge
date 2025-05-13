@@ -14,7 +14,7 @@ const rooms = [
       "Our comfortable standard rooms offer all the essentials for a relaxing stay, with modern amenities and a peaceful atmosphere.",
     image:
       "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    price: "$80",
+    price: "K950",
     amenities: ["Free Wi-Fi", "Breakfast Included", "Flat-screen TV", "Air Conditioning", "Private Bathroom"],
     size: "25m²",
     beds: "1 Queen Bed",
@@ -25,7 +25,7 @@ const rooms = [
       "Experience luxury in our spacious deluxe suites, featuring a separate living area, premium amenities, and beautiful views of the surroundings.",
     image:
       "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
-    price: "$120",
+    price: "K1,450",
     amenities: [
       "Free Wi-Fi",
       "Breakfast Included",
@@ -44,7 +44,7 @@ const rooms = [
       "Perfect for business travelers, our executive rooms feature a dedicated workspace, enhanced amenities, and elegant design for a productive stay.",
     image:
       "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    price: "$100",
+    price: "K1,200",
     amenities: [
       "Free Wi-Fi",
       "Breakfast Included",
@@ -63,7 +63,7 @@ const rooms = [
       "Spacious and comfortable, our family suites are designed to accommodate families with children, featuring multiple beds and family-friendly amenities.",
     image:
       "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
-    price: "$150",
+    price: "K1,800",
     amenities: [
       "Free Wi-Fi",
       "Breakfast Included",
@@ -92,7 +92,7 @@ export function RoomsList() {
 
   return (
     <section className="py-20">
-      <div className="container">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="space-y-16">
           {rooms.map((room, index) => (
             <motion.div
@@ -128,7 +128,7 @@ export function RoomsList() {
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {room.amenities.map((amenity, i) => (
                       <li key={i} className="flex items-center text-muted-foreground">
-                        {amenityIcons[amenity] || amenityIcons.default}
+                        {amenityIcons[amenity as keyof typeof amenityIcons] || amenityIcons.default}
                         {amenity}
                       </li>
                     ))}

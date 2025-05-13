@@ -12,7 +12,7 @@ export function CTASection() {
 
   return (
     <section className="py-20 bg-primary text-primary-foreground">
-      <div ref={ref} className="container text-center">
+      <div ref={ref} className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -36,14 +36,14 @@ export function CTASection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-col sm:flex-row justify-center gap-4"
         >
-          <Button asChild size="lg" variant="secondary">
+          <Button asChild size="lg" variant="secondary" className="text-primary">
             <Link href="/contact">Book Your Stay</Link>
           </Button>
           <Button
             asChild
             size="lg"
             variant="outline"
-            className="bg-transparent border-white text-white hover:bg-white/10"
+            className="border-white text-white"
           >
             <Link href="/contact">Contact Us</Link>
           </Button>
